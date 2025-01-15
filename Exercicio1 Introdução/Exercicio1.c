@@ -1,26 +1,51 @@
-#include <stdio.h> //Biblioteca 
-#include <string.h> 
+#include <stdio.h>
+#include <string.h>
+void limpar_entrada() //quando você for ler um texto até a quebra de linha (ou um caractere char), mas antes o seu programa já leu algum outro dado e deixou uma quebra de linha pendente
+{
+    char c;
+    while ((c = getchar()) != '\n' && c != EOF)
+    {
+    }
+}
+void ler_texto(char *buffer, int length) //Para ler um texto de tamanho N até a quebra de linha 
+{
+    fgets(buffer, length, stdin);
+    strtok(buffer, "\n");
+}
+int main()
+{
+    double salario1, salario2;
+    char nome1[50], nome2[50];
+    int idade;
+    char sexo;
 
-int main(){
-
-    int  idade;
-    double salario, altura;
-    char genero;
-    char nome[50];
-
-
-    idade = 20;
-    salario = 5800.5;
-    altura = 1,70;
-    genero = 'F';
-    Strcty(nome, "Maria Silva");
-
-
-
-printf("IDADE ")
-
-printf("ola mundo");
-
-
-return 0; //Em C deve-se colocar return 0 no final
+    printf("Nome da primeira pessoa: ");
+    ler_texto(nome1, 50);
+    
+    printf("Salario da primeira pessoa: ");
+    scanf("%lf", &salario1);
+    
+    printf("Nome da segunda pessoa: ");
+    limpar_entrada();
+    ler_texto(nome2, 50);
+    
+    printf("Salario da segunda pessoa: ");
+    scanf("%lf", &salario2);
+    
+    printf("Digite uma idade: ");
+    scanf("%d", &idade);
+    
+    printf("Digite um sexo (F/M): ");
+    limpar_entrada();
+    scanf("%c", &sexo);
+    
+    printf("Nome 1: %s\n", nome1);
+    printf("Salario 1: %.2lf\n", salario1);
+    printf("Nome 2: %s\n", nome2);
+    printf("Salario 2: %.2lf\n", salario2);
+    printf("Idade: %d\n", idade);
+    printf("Sexo: %c\n", sexo);
+    
+    
+    return 0;
 }
