@@ -1,0 +1,12 @@
+No Visual Studio por ele não ser uma IDE de compilação
+
+no terminal deve-se criar o executável e depois executar dele
+
+
+1 - gcc exercicio1.c -o ExercicioExecutavel
+
+
+2 - ./ExercicioExecutavel
+
+
+ok!
